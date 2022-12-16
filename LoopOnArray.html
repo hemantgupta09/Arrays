@@ -1,0 +1,240 @@
+<script>
+	 var a=[1,3,5,3,5];
+	 var b=[3,4,6,7,8];
+	 a=a.concat(b);
+	 console.log(a);
+</script>
+
+<script>
+	var ary=[10,20,30,40]
+	//ary.pop()
+	//ary.push(40)
+	ary.unshift(20)
+	console.log(ary)
+</script>
+
+<script>
+	//array by user inputs & its operation
+	var s=parseInt(prompt("enter size of "))
+	var ary=[];
+	for(var i=0;i<s;i++)
+	{
+		ary[i]=parseInt(prompt("enter "+i+" element"))
+	}
+	for(var j=0;j<ary.length;j++)
+	{
+		for(var k=j+1;k<ary.length;k++)
+		{
+			if(ary[j]>ary[k])
+			{
+				var v=ary[j];
+				ary[j]=ary[k];
+				ary[k]=v;
+			}
+		}
+	}
+	console.log(ary);
+</script>
+
+<script>
+	var s=[[3,4,5],[2,7,9],12,14,13]
+	for(var i=0;i<s.length;i++)
+	{
+		var sum=0;
+		var t=0;
+		if(Array.isArray(s[i]))
+		{
+			for(var z=0;z<s[i].length;z++)
+			{	
+				sum=sum+s[i][z];
+			}
+			console.log(sum);
+		}
+		else
+		{
+			t=t+s[i]
+		}
+	}
+	console.log(t);
+	console.log(sum);
+</script>
+
+<script>
+	//Sum of Each Nested and Normal Elements of array
+	var ary=[[2,3,5],[7,4,9,6],12,11,8,3];
+	var a=[];
+	var n=0;
+	var s=0;
+	while(n<ary.length)
+	{
+		if(Array.isArray(ary[n]))
+		{
+			var sum=0;
+			for(var i=0;i<ary[n].length;i++)
+			{
+				sum=sum+ary[n][i];
+			}
+			a.push(sum);
+		}
+		else
+		{
+			s=s+ary[n];
+		}
+		n++;
+	}
+	a.push(s);
+	console.log(a);
+</script>
+
+<script>
+	//both nest and normal element array sum by sequence
+	var ary=[[2,3,5],[7,4,9,6],12,11,8,3];
+	var a=[];
+	var s=0;
+	for(var i=0;i<ary.length;i++)
+	{
+		if(Array.isArray(ary[i]))
+		{
+			var sum=0;
+			for(var j=0;j<ary[i].length;j++)
+			{
+				sum=sum+ary[i][j];
+			}
+			a.push(sum);
+		}
+		else
+		{
+			s=s+ary[i];
+		}
+	}
+	a.push(s);
+	console.log(a);
+</script> 
+
+<script>
+	//Sum of Each Nested Array
+	var ary=[[2,3,5],[7,4,9],[12,14,18]];
+	var a=[];
+	var sum=0;
+	var n=0;
+	while(n<ary.length)
+	{
+		var sum=0;
+		for(var i=0;i<ary[n].length;i++)
+		{
+			sum=sum+ary[n][i];
+		}
+		a[n]=sum;
+		n++;
+	}
+	console.log(a);
+</script>
+
+<script>
+	var ary=[[2,3,5],[7,4,9,6],[12,11,8,3]];
+	var a=[];
+	var s=0;
+	for(var i=0;i<ary.length;i++)
+	{
+		var sum=0;
+		for(var j=0;j<ary[i].length;j++)
+		{
+			sum=sum+ary[i][j];
+		}
+		ary[i]=sum;
+	}
+	console.log(ary);
+</script>
+
+<script>
+	var a=[2,3,4,5,6];
+	var so=0;
+	var se=0;
+	for(var i of a)
+	{
+		if(i%2==0)
+		{
+			se=se+i;
+		}
+		else
+		{
+			so=so+i;
+		} 
+	}
+	console.log(se);
+	console.log(so);
+</script>
+
+
+<script>
+	//Ascending order of array without method
+	var a=[8,27,68,1,23,6];
+	var v=0;
+	for(var i=0;i<a.length;i++)
+	{
+		for(var z=i+1;z<a.length;z++)
+		{
+			if(a[i]<a[z])
+			{
+				[a[i],a[z]]=[a[z],a[i]];
+			}
+		}
+	}
+	console.log(a);
+</script>
+
+<script>
+	//repeated elements of array
+	var a=[1,4,2,1,3,4,6,4,4,3];
+	var s=[];
+	for(var i=0;i<a.length;i++)
+	{
+		var c=0;
+		for(var j=i+1;j<a.length;j++)
+		{
+			if(a[i]==a[j])
+				c++;
+		}
+		if(c>0 && !s.includes(a[i]))
+		{
+			s[i]=a[i];
+			console.log(s[i]+" repeated "+c+" times");
+		}
+	}
+</script>
+
+<script>
+	//biggest & second biggest element of array
+	var a=[10,9,2,5,3,4,5,8];
+	var b=0;
+	var sb=0;
+	for(var c of a)
+	{
+		if(b<c)
+		{
+			b=c;
+		}
+		else if(sb<c && sb!=b)
+		{
+			sb=c;
+		}
+	}
+	console.log("biggest num  "+b);
+	console.log("second big num "+sb);
+</script>
+
+<script>
+	//smalllest & second smallest number of array elements
+	var ary=[20,8,3,22,21,4];
+	var s=a[0];
+	var sm=a[1];
+	for(var i of ary)
+	{
+		if(i<s)
+			s=i;
+		else if(i<sm && sm!=s)
+			sm=i;
+	}
+	console.log(s);
+	console.log(sm);
+</script>
