@@ -1,0 +1,78 @@
+<script>
+	var a=[[2,2,2],[2,2,2],3,2,1]
+	var b=[];
+	var c=0;
+	var d=0;
+	a.forEach(function(v,i){
+		if(Array.isArray(v))
+		{
+			b.push(v.reduce(function(r,v){
+				return r+v;
+			}));
+	    }
+		else
+		{
+			b.push(v);
+		}
+	})
+	console.log(b);
+</script>
+
+<script>
+	//sum of each nested array without loop
+	var ar=[[1,2,3],[4,5,6],[7,8,9,9]];
+	var sum=0;
+	ar.forEach(function(v){
+	  		sum=sum+v.reduce(function(v,r){
+	  			return v+r;
+	  		})
+	})
+	console.log(sum);
+</script>
+
+<script>
+	//sum of each nested array without loop
+	var ar=[[1,2,3],[4,5,6],[7,8,9,9]];
+	var sum=0;
+	ar.forEach(function(v,i){
+	  		v.forEach(function(v,i){
+	  			sum=sum+v;
+	  		})
+	})
+	console.log(sum);
+</script>
+
+
+<script>
+	//sum of each nest array and normal elements without loop
+	var ar=[[1,2],[3,4],2,2,2];
+	var d=[];
+	var s=0;
+	ar.forEach(function(v,i){
+	  		if(Array.isArray(v))
+	  		{
+	  			d.push(v.reduce(function(v,r){
+	  			return v+r;
+	  		}));
+	  	    }
+	  	    else
+	  	    {
+	  	    	s=s+v;
+	  	    }
+	})
+	d.push(s);
+	console.log(d);
+</script>
+
+<script>
+	var ary=[[1,2,3,4,5],[4,5,6],[7,8,10]];
+	var t=0;
+	var z=0;
+	ary.forEach(function(v){
+		v.forEach(function(s){
+			t=s;
+		})
+		z=z+t;
+	})
+	console.log(z);
+</script>
